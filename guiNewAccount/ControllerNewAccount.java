@@ -121,6 +121,9 @@ public class ControllerNewAccount {
 		            // Set the database so it has this user and the current user
 		            theDatabase.getUserAccountDetails(username);
 
+					// Delete the invitation code after account is created
+            		theDatabase.removeInvitationAfterUse(ViewNewAccount.theInvitationCode);
+
 		            // Navigate to the Welcome Login Page
 		            guiUserUpdate.ViewUserUpdate.displayUserUpdate(ViewNewAccount.theStage, user);
 				}
